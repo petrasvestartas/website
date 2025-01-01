@@ -1,4 +1,4 @@
-import { createApp } from 'vue';
+import { createApp, defineAsyncComponent } from 'vue';
 
 import { register } from 'swiper/element/bundle';
 import 'swiper/swiper-bundle.css';
@@ -13,6 +13,7 @@ import BaseButton from './components/ui/BaseButton.vue';
 import BaseBadge from './components/ui/BaseBadge.vue';
 import BaseSpinner from './components/ui/BaseSpinner.vue';
 import BaseDialog from './components/ui/BaseDialog.vue';
+// const BaseDialog = defineAsyncComponent(() => import('./components/ui/BaseDialog.vue'));
 
 import { initializeApp, getApps } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';

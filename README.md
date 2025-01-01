@@ -1,6 +1,6 @@
 # portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+Petras Vestartas website using Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
@@ -32,6 +32,14 @@ npm run build
 
 ```sh
 npm run lint
+```
+
+### Deployment
+
+```sh
+npm install gh-pages --save-dev
+npm run build
+npm run deploy
 ```
 
 npm install vue3-carousel

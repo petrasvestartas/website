@@ -1,6 +1,7 @@
+import { defineAsyncComponent } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router'; // Import the createRouter function
 
-import ProjectDetail from './pages/projects/ProjectsDetail.vue';
+// import ProjectDetail from './pages/projects/ProjectsDetail.vue';
 import ProjectsList from './pages/projects/ProjectsList.vue';
 import ProjectRegistration from './pages/projects/ProjectRegistration.vue';
 import ContactProject from './pages/requests/ContactProject.vue';
@@ -12,6 +13,18 @@ import Teaching from './pages/teaching/Teaching.vue';
 import Papers from './pages/papers/Papers.vue';
 import About from './pages/about/About.vue';
 import store from './store/index.js';
+
+// const ProjectDetail = defineAsyncComponent(() => import('./pages/projects/ProjectsDetail.vue'));
+// const ProjectRegistration = defineAsyncComponent(() => import('./pages/projects/ProjectRegistration.vue'));
+// const ContactProject = defineAsyncComponent(() => import('./pages/requests/ContactProject.vue'));
+// const RequestsReceived = defineAsyncComponent(() => import('./pages/requests/RequestsReceived.vue'));
+// const UserAuth = defineAsyncComponent(() => import('./pages/auth/UserAuth.vue'));
+// const Code = defineAsyncComponent(() => import('./pages/code/Code.vue'));
+// const Teaching = defineAsyncComponent(() => import('./pages/teaching/Teaching.vue'));
+// const Papers = defineAsyncComponent(() => import('./pages/papers/Papers.vue'));
+// const About = defineAsyncComponent(() => import('./pages/about/About.vue'));
+
+
 
 
 const router = createRouter({
