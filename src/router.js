@@ -1,9 +1,9 @@
 import { defineAsyncComponent } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router'; // Import the createRouter function
 
-import ProjectDetail from './pages/website/ProjectsDetail.vue';
-import ProjectsList from './pages/website/ProjectsList.vue';
-import ProjectRegistration from './pages/website/ProjectRegistration.vue';
+import ProjectDetail from './pages/projects/ProjectsDetail.vue';
+import ProjectsList from './pages/projects/ProjectsList.vue';
+import ProjectRegistration from './pages/projects/ProjectRegistration.vue';
 import ContactProject from './pages/requests/ContactProject.vue';
 import RequestsReceived from './pages/requests/RequestsReceived.vue';
 import UserAuth from './pages/auth/UserAuth.vue';
@@ -14,8 +14,8 @@ import Papers from './pages/papers/Papers.vue';
 import About from './pages/about/About.vue';
 import store from './store/index.js';
 
-// const ProjectDetail = defineAsyncComponent(() => import('./pages/website/ProjectsDetail.vue'));
-// const ProjectRegistration = defineAsyncComponent(() => import('./pages/website/ProjectRegistration.vue'));
+// const ProjectDetail = defineAsyncComponent(() => import('./pages/projects/ProjectsDetail.vue'));
+// const ProjectRegistration = defineAsyncComponent(() => import('./pages/projects/ProjectRegistration.vue'));
 // const ContactProject = defineAsyncComponent(() => import('./pages/requests/ContactProject.vue'));
 // const RequestsReceived = defineAsyncComponent(() => import('./pages/requests/RequestsReceived.vue'));
 // const UserAuth = defineAsyncComponent(() => import('./pages/auth/UserAuth.vue'));
@@ -30,10 +30,11 @@ import store from './store/index.js';
 const router = createRouter({
     history: createWebHistory(), // Use the createWebHistory
     routes: [
-        { path: '/', redirect: '/website' },
-        { path: '/website', component: ProjectsList },
+        { path: '/', redirect: '/projects' },
+        { path: '/website', redirect: '/projects' }, // Add this line to redirect /website to /projects
+        { path: '/projects', component: ProjectsList },
         { 
-            path: '/website/:id', 
+            path: '/projects/:id', 
             component: ProjectDetail,
             props: true, // Pass the route params as props to the component
             children: [
@@ -59,7 +60,7 @@ router.beforeEach((to, _, next) => {
     if (to.meta.requiresAuth && !store.getters.isAuthenticated) {
         next('/auth');
     } else if (to.meta.requiresUnauth && store.getters.isAuthenticated) {
-        next('/website');
+        next('/projects');
     } else {
         next();
     }
