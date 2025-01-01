@@ -4,7 +4,6 @@ import { register } from 'swiper/element/bundle';
 import 'swiper/swiper-bundle.css';
 register();
 
-
 import router from './router.js'; // Import the router instance
 import store from './store/index.js'; // Import the store instance
 import App from './App.vue';

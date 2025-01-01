@@ -1,14 +1,3 @@
-// const ProjectDetail = defineAsyncComponent(() => import('./pages/projects/ProjectsDetail.vue'));
-// const ProjectRegistration = defineAsyncComponent(() => import('./pages/projects/ProjectRegistration.vue'));
-// const ContactProject = defineAsyncComponent(() => import('./pages/requests/ContactProject.vue'));
-// const RequestsReceived = defineAsyncComponent(() => import('./pages/requests/RequestsReceived.vue'));
-// const UserAuth = defineAsyncComponent(() => import('./pages/auth/UserAuth.vue'));
-// const Code = defineAsyncComponent(() => import('./pages/code/Code.vue'));
-// const Teaching = defineAsyncComponent(() => import('./pages/teaching/Teaching.vue'));
-// const Papers = defineAsyncComponent(() => import('./pages/papers/Papers.vue'));
-// const About = defineAsyncComponent(() => import('./pages/about/About.vue'));
-
-import { defineAsyncComponent } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router'; // Use createWebHashHistory instead of createWebHistory
 
 import ProjectDetail from './pages/projects/ProjectsDetail.vue';
@@ -61,4 +50,3 @@ router.beforeEach((to, _, next) => {
 }); // Add a global navigation guard
 
 export default router; // Export the router instance
-
