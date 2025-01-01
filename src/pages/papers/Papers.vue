@@ -72,7 +72,7 @@ export default {
         const items = snapshot.docs.map(doc => {
           const data = { id: doc.id, ...doc.data() };
           return data;
-        });
+        }).filter(item => !item.skip); // Filter out documents with skip set to true
         items.sort((a, b) => new Date(b.date) - new Date(a.date));
         this.collections[collectionName] = items;
       }
