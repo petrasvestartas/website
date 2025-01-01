@@ -1,7 +1,7 @@
 import { defineAsyncComponent } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router'; // Import the createRouter function
 
-// import ProjectDetail from './pages/projects/ProjectsDetail.vue';
+import ProjectDetail from './pages/projects/ProjectsDetail.vue';
 import ProjectsList from './pages/projects/ProjectsList.vue';
 import ProjectRegistration from './pages/projects/ProjectRegistration.vue';
 import ContactProject from './pages/requests/ContactProject.vue';
