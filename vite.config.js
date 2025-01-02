@@ -6,8 +6,10 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
-    // base: mode === 'production' ? '/website/' : '/', // Set the base path conditionally based on the mode
+    base: mode === 'production' ? '/website/' : '/', // Set the base path conditionally based on the mode
+    // base: mode === 'production' ? '/' : '/', // Always root
 
+   
     plugins: [
       vue({
         template: {
@@ -30,7 +32,12 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       sourcemap: false, // Enable source maps for development server
+      open: true,
+      watch: {
+        usePolling: true, // Fixes issues in some environments
+      },
     },
+
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
