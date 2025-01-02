@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
-    base: mode === 'production' ? '/website/' : '/', // Set the base path conditionally based on the mode
+    // base: mode === 'production' ? '/website/' : '/', // Set the base path conditionally based on the mode
 
     plugins: [
       vue({
