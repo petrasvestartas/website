@@ -1,18 +1,29 @@
 <template>
   <div>
+ 
     <base-dialog :show="!!error" title="An error occurred" @close="handleError">
       <p>{{ error }}</p>
     </base-dialog>
 
+    
+
     <section>
       <base-card>
         <div class="controls">
-          <base-button v-if="isLoggedIn" link to="/register">Register Project</base-button>
+          <base-button v-if="isLoggedIn" link to="/register" >Register Project</base-button>
         </div>
+
+        <section class="centered-text">
+      <router-link to="/about" class="petraslink">Petras Vestartas</router-link>
+    </section>
 
         <div v-if="isLoading">
           <base-spinner></base-spinner>
+
+
+    
         </div>
+
 
         <ul v-else-if="hasProjects" class="projects-grid">
           <project-item
@@ -31,6 +42,7 @@
       <project-filter @change-filter="setFilters"></project-filter>
     </section>
   </div>
+
 </template>
 
 <script>
@@ -108,21 +120,14 @@ export default {
     }
   }
 };
-</script>
 
+
+</script>
 <style scoped>
 .projects-grid {
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0px;
-  width: 100%;
-}
-
-.controls {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0rem;
+  grid-template-columns: repeat(4, 1fr); /* Always three columns */
 }
 
 ul {
@@ -131,16 +136,24 @@ ul {
   padding: 0;
 }
 
-@media (max-width: 600px) {
-  .projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .controls {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.centered-text {
+  margin-top: 2rem;
+  text-align: center;
+  font-family: roboto; /* Replace with the actual font family used in project details */
+  font-size: 23px; /* Replace with the actual font size used in project details */
+  font-weight: 400; /* Replace with the actual font weight used in project details */
+  color: #333; /* Replace with the actual color used in project details */
 }
+
+.centered-text .petraslink {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.centered-text .petraslink:hover {
+  transform: scale(1.1);
+}
+
 </style>

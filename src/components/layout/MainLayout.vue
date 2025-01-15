@@ -94,7 +94,7 @@ export default {
 },
   data() {
     return {
-      isCollapsed: false
+      isCollapsed: true
     };
   },
   methods: {
