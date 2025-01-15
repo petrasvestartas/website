@@ -2,8 +2,8 @@
 
   <div>
           <div class="about-section">
-      <h1>About Me</h1>
-      <div>Petras Vestartas joined the Block Research Group as post-doctoral researcher in 2023. He holds BA and MA degrees in architecture from VAA (Lithuania). His PhD was completed at the Laboratory for Timber Constructions IBOIS, EPFL (Switzerland), where his research focused on digital timber fabrication, scanning methods, robotic tool-path planning (ABB), development of advanced timber structures and project-based applications. He has developed various software applications, including compas_wood (joinery generation), NGon (polygonal mesh processing), OpenNest (2D nesting), Raccoon (CNC fabrication), and Coockroach (pointcloud processing).</div>
+      <h1>About Petras</h1>
+      <div>Petras Vestartas is a post-doctoral researcher at Block Research Group from 2023. He holds BA and MA degrees in architecture from VAA (Lithuania). His PhD was completed at the Laboratory for Timber Constructions IBOIS, EPFL (Switzerland), where his research focused on digital timber fabrication, scanning methods, robotic tool-path planning (ABB), development of advanced timber structures and project-based applications. He has developed various software applications, including compas_wood (joinery generation), NGon (polygonal mesh processing), OpenNest (2D nesting), Raccoon (CNC fabrication), and Coockroach (pointcloud processing).</div>
   
       <div>Petras has extensive experience teaching master's and bachelor's students and conducting academic and commercial workshops. He has also supervised Master's thesis projects in architecture and provided guidance to PhD students during his postdoctoral studies. Notably, he designed a new course called "Introduction to Computational Architecture" (EPFL AR-327) for architects. In addition, Petras has contributed to the setup of CNC and industrial robots for IBOIS researchers. He has also worked as a researcher at CITA, KADK (Denmark) and gained further experience in international architecture offices such as Do-Architects (Lithuania), CEBRA (Denmark), and DMAA (Austria). His work with interdisciplinary teams, including architects, structural engineers, and computer scientists, has enriched his knowledge and skills in the field.</div>
     </div>
@@ -218,6 +218,14 @@ p {
   margin: 0 auto; /* Center the section */
 }
 
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .about-section {
+    padding-left: 0.5rem; /* Minimal padding on the left */
+    padding-right: 0.5rem; /* Minimal padding on the right */
+  }
+}
+
 .about-section h1 {
   font-size: 1.5rem;
   text-align: center;
@@ -236,12 +244,22 @@ p {
 .about-section {
   padding: 2rem;
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.33;
   color: #333;
   font-size: 0.9rem; /* Smaller font size */
   text-align: justify; /* Align text vertically on both sides */
   max-width: 66.66%; /* Offset by a third of the page */
   margin: 0 auto; /* Center the section */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .about-section {
+    padding-left: 0.0rem; /* Minimal padding on the left */
+    padding-right: 0.0rem; /* Minimal padding on the right */
+    max-width: 90.00%; /* Offset by a third of the page */
+    line-height: 1.33; /* Default line height */
+  }
 }
 
 .about-section h1 {

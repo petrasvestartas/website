@@ -123,11 +123,13 @@ export default {
 
 
 </script>
+
 <style scoped>
 .projects-grid {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Always three columns */
+  grid-template-columns: repeat(4, 1fr); /* Default to four columns */
+  gap: 0rem; /* Add some gap between the grid items */
 }
 
 ul {
@@ -156,4 +158,10 @@ ul {
   transform: scale(1.1);
 }
 
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Change to one column */
+  }
+}
 </style>
