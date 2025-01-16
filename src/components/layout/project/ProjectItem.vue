@@ -56,10 +56,11 @@ li {
   height: auto;
   display: block;
   transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s, filter 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .project-image:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
 }
 
