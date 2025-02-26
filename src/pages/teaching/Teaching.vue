@@ -61,7 +61,18 @@ export default {
         const colRef = collection(db, collectionName);
         const snapshot = await getDocs(colRef);
         const items = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        items.sort((a, b) => new Date(b.date) - new Date(a.date));
+        // console.log(`Before sorting - Collection: ${collectionName}`, items);
+        items.sort((a, b) => {
+          const getEarliestYear = (date) => {
+            const years = date.split(',').map(year => parseInt(year.trim(), 10));
+            return Math.min(...years);
+          };
+          const dateA = getEarliestYear(a.date);
+          const dateB = getEarliestYear(b.date);
+          // console.log(`Sorting by date - Item A: ${a.date} (${dateA}), Item B: ${b.date} (${dateB})`);
+          return dateB - dateA;
+        });
+        // console.log(`After sorting - Collection: ${collectionName}`, items);
         this.collections[collectionName] = items;
       }
 
@@ -78,8 +89,6 @@ export default {
   }
 };
 </script>
-
-
 
 <style scoped>
 h1 {
