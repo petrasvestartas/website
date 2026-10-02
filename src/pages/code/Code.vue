@@ -5,7 +5,6 @@
         <h1>Code</h1>
 
         <section class="intro">
-          <p class="summary">{{ profile.summary }}</p>
           <div class="links">
             <base-button :to="profile.github" :link="true">GitHub</base-button>
             <base-button :to="profile.sponsor" :link="true">Sponsor</base-button>
@@ -22,7 +21,7 @@
               </div>
               <div class="featured-text">
                 <div class="title-row">
-                  <h3>{{ project.title }}</h3>
+                  <h3>{{ project.title }} <language-icons :languages="project.languages" /></h3>
                   <span v-if="project.stars" class="stars">★ {{ project.stars }}</span>
                 </div>
                 <p class="description">{{ project.description }}</p>
@@ -43,7 +42,7 @@
             <ul class="repo-list">
               <li v-for="repo in group.repositories" :key="repo.name">
                 <a :href="repo.url" target="_blank" rel="noopener noreferrer" class="repo">
-                  <span class="repo-name">{{ repo.name }}</span>
+                  <span class="repo-name">{{ repo.name }} <language-icons :languages="repo.languages" /></span>
                   <span class="repo-description">{{ repo.description }}</span>
                 </a>
               </li>
@@ -56,7 +55,7 @@
           <div class="plugin-grid">
             <a v-for="plugin in plugins" :key="plugin.title" :href="plugin.url" target="_blank" rel="noopener noreferrer" class="plugin">
               <img :src="plugin.imageUrl" :alt="plugin.title">
-              <span class="repo-name">{{ plugin.title }}</span>
+              <span class="repo-name">{{ plugin.title }} <language-icons :languages="plugin.languages" /></span>
               <span class="repo-description">{{ plugin.description }}</span>
             </a>
           </div>
@@ -68,9 +67,13 @@
 
 <script>
 import { profile, featured, contributions, plugins } from './codeData.js';
+import LanguageIcons from './LanguageIcons.vue';
 
 export default {
   name: 'Code',
+  components: {
+    LanguageIcons
+  },
   data() {
     return {
       profile,
@@ -109,10 +112,6 @@ p {
   max-width: 900px;
 }
 
-.summary {
-  font-size: 1.1em;
-  line-height: 1.5;
-}
 
 .collection {
   margin: 0 60px 20px 60px;
@@ -216,7 +215,7 @@ p {
 
 .repo {
   display: grid;
-  grid-template-columns: minmax(180px, 280px) 1fr;
+  grid-template-columns: minmax(180px, 340px) 1fr;
   gap: 15px;
   align-items: baseline;
   padding: 8px 10px;
@@ -227,6 +226,11 @@ p {
 
 .repo:hover {
   background-color: #f5f5f5;
+}
+
+.language-icons {
+  margin-left: 8px;
+  vertical-align: -2px;
 }
 
 .repo-name {
