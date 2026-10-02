@@ -47,7 +47,7 @@ export const featured = [
     description: 'One geometry kernel written in C++, Python and Rust with the same API, the same protobuf schemas and the same tests in every language. Meshes, NURBS, BReps and a WebGPU viewer.',
     languages: ['C++', 'Python', 'Rust'],
     stars: 3,
-    imageUrl: null,
+    imageUrl: IMAGES + 'session.png',
     links: [
       { label: 'GitHub', url: 'https://github.com/petrasvestartas/session' },
       { label: 'Documentation', url: 'https://petrasvestartas.github.io/session/' },
