@@ -160,14 +160,16 @@ html, body {
 }
 .toggle-button {
   position: fixed;
-  top: 1rem;
-  left: 1rem;
+  top: 16px;
+  left: 16px;
   z-index: 1000;
-  width: 2rem;
-  height: 2rem;
+  /* whole pixels (multiples of 4) so the three stripes render with equal thickness
+     at 100%, 125%, 150% and 200% display scaling */
+  width: 32px;
+  height: 28px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background: transparent;
   border: none;
@@ -177,7 +179,8 @@ html, body {
 
 .stripe {
   width: 100%;
-  height: 0.25rem;
+  height: 4px;
+  flex: none;
   background-color: #000; /* Default color */
   transition: background-color 0.3s;
 }

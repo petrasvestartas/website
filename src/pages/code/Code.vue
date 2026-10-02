@@ -6,10 +6,6 @@
 
         <section class="intro">
           <p class="summary">{{ profile.summary }}</p>
-          <div class="tags">
-            <span v-for="language in profile.languages" :key="language" class="tag tag-strong">{{ language }}</span>
-            <span v-for="tool in profile.stack" :key="tool" class="tag">{{ tool }}</span>
-          </div>
           <div class="links">
             <base-button :to="profile.github" :link="true">GitHub</base-button>
             <base-button :to="profile.sponsor" :link="true">Sponsor</base-button>
@@ -29,13 +25,9 @@
                   <h3>{{ project.title }}</h3>
                   <span v-if="project.stars" class="stars">★ {{ project.stars }}</span>
                 </div>
-                <p class="subtitle">{{ project.subtitle }}</p>
                 <p class="description">{{ project.description }}</p>
-                <div class="tags">
-                  <span v-for="language in project.languages" :key="language" class="tag">{{ language }}</span>
-                </div>
-                <div class="links">
-                  <base-button v-for="link in project.links" :key="link.url" :to="link.url" :link="true">{{ link.label }}</base-button>
+                <div class="text-links">
+                  <a v-for="link in project.links" :key="link.url" :href="link.url" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
                 </div>
               </div>
             </article>
@@ -45,19 +37,16 @@
         <section class="collection">
           <h2>Open-Source Contributions</h2>
           <div v-for="group in contributions" :key="group.organisation" class="organisation">
-            <div class="organisation-header">
-              <base-button :to="group.url" mode="outline" :link="true">{{ group.organisation }}</base-button>
-              <span class="description">{{ group.description }}</span>
-            </div>
+            <h3 class="organisation-header">
+              <a :href="group.url" target="_blank" rel="noopener noreferrer">{{ group.organisation }}</a>
+            </h3>
             <ul class="repo-list">
               <li v-for="repo in group.repositories" :key="repo.name">
                 <a :href="repo.url" target="_blank" rel="noopener noreferrer" class="repo">
                   <span class="repo-name">{{ repo.name }}</span>
                   <span class="repo-description">{{ repo.description }}</span>
                   <span class="repo-meta">
-                    <span class="repo-languages">{{ repo.languages.join(' · ') }}</span>
                     <span v-if="repo.commits" class="commits">{{ repo.commits }} commits</span>
-                    <span class="stars">★ {{ repo.stars }}</span>
                   </span>
                 </a>
               </li>
@@ -72,7 +61,6 @@
               <img :src="plugin.imageUrl" :alt="plugin.title">
               <span class="repo-name">{{ plugin.title }}</span>
               <span class="repo-description">{{ plugin.description }}</span>
-              <span class="repo-languages">{{ plugin.languages.join(' · ') }}</span>
             </a>
           </div>
         </section>
@@ -134,9 +122,7 @@ p {
 }
 
 .description,
-.subtitle,
 .repo-description,
-.repo-languages,
 .commits,
 .stars {
   font-size: 0.8em;
@@ -145,31 +131,6 @@ p {
 
 .description {
   line-height: 1.5;
-}
-
-.subtitle {
-  margin-top: 0.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0.7rem 0;
-}
-
-.tag {
-  font-size: 0.75em;
-  padding: 0.15rem 0.5rem;
-  background-color: #efefef;
-  color: #000000;
-}
-
-.tag-strong {
-  background-color: #000000;
-  color: #ffffff;
 }
 
 .links {
@@ -212,6 +173,23 @@ p {
   color: #c4c4c4;
 }
 
+.text-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-size: 0.85em;
+}
+
+.text-links a {
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.text-links a:hover {
+  color: grey;
+}
+
 .title-row {
   display: flex;
   align-items: baseline;
@@ -225,11 +203,13 @@ p {
 }
 
 .organisation-header {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 5px;
+  font-size: 1em;
+  margin: 0 0 5px 0;
+}
+
+.organisation-header a {
+  color: #000000;
+  text-decoration: none;
 }
 
 .repo-list {
@@ -244,21 +224,13 @@ p {
   gap: 15px;
   align-items: baseline;
   padding: 8px 10px;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #f0f0f0;
   color: #000000;
   text-decoration: none;
 }
 
 .repo:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
-
-.repo:hover .repo-description,
-.repo:hover .repo-languages,
-.repo:hover .commits,
-.repo:hover .stars {
-  color: #c4c4c4;
+  background-color: #f5f5f5;
 }
 
 .repo-name {
