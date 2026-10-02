@@ -27,6 +27,6 @@ Images for projects are hosted in [petrasvestartas/storage](https://github.com/p
    npm run project -- floor
    ```
 
-   It asks for the website login (or reads `FIREBASE_EMAIL` and `FIREBASE_PASSWORD`). A project with the same title is updated, otherwise a new one is created. The website shows the change on the next page load, no deploy needed.
+   It asks for the website login (or reads `FIREBASE_EMAIL` and `FIREBASE_PASSWORD`). A project with the same title is updated, otherwise a new one is created. The website shows the change on the next page load, no deploy needed. Image links point to the exact storage commit, so run `npm run project` again after every `npm run upload` to show the new images (this also avoids old cached images in browsers).
 
 Uses the `gh` CLI login (`gh auth login`) or a `GITHUB_TOKEN` environment variable.

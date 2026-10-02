@@ -9,7 +9,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { createInterface } from 'node:readline';
-import { projectFolder, projectFiles, projectUrls } from './project-files.mjs';
+import { OWNER, REPO, BRANCH, projectFolder, projectFiles, projectUrls } from './project-files.mjs';
 
 const API_KEY = 'AIzaSyDHebBy3OIgDl5p5h0skKgXKoVSc_Jz9Z8';
 const DATABASE = 'https://vue-http-demo-f5470-default-rtdb.europe-west1.firebasedatabase.app';
@@ -30,7 +30,13 @@ if (!existsSync(jsonPath)) {
     process.exit(1);
 }
 
-const { imageUrl, figureUrls } = projectUrls(project, projectFiles(folder));
+const commitResponse = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/commits/${BRANCH}`);
+const commit = await commitResponse.json();
+if (!commitResponse.ok) {
+    console.error(`Could not read the latest ${OWNER}/${REPO} commit: ${commit.message}`);
+    process.exit(1);
+}
+const { imageUrl, figureUrls } = projectUrls(project, projectFiles(folder), commit.sha);
 if (!imageUrl) {
     console.error(`No *_640_360 thumbnail in ${folder}.`);
     process.exit(1);

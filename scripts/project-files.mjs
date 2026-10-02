@@ -23,8 +23,10 @@ export function projectFiles(folder) {
         .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 }
 
-export function projectUrls(project, files) {
-    const rawUrl = name => `https://raw.githubusercontent.com/${OWNER}/${REPO}/refs/heads/${BRANCH}/images/${project}/${name}`;
+// ref is a branch ref or a commit SHA. Publishing uses the commit SHA, so every publish gives
+// new URLs and browsers cannot show an old cached version of a replaced image.
+export function projectUrls(project, files, ref = `refs/heads/${BRANCH}`) {
+    const rawUrl = name => `https://raw.githubusercontent.com/${OWNER}/${REPO}/${ref}/images/${project}/${name}`;
     const thumbnail = files.find(name => name.includes('_640_360'));
     return {
         imageUrl: thumbnail ? rawUrl(thumbnail) : null,
