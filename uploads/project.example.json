@@ -1,0 +1,26 @@
+{
+  "title": "My Project",
+  "authors": "Petras Vestartas, Co Author",
+  "date": "2025",
+  "location": "Zurich, Switzerland",
+  "types": [
+    "research",
+    "prototypes"
+  ],
+  "sortId": 14,
+  "urls": [
+    "https://example.com"
+  ],
+  "descriptions": [
+    {
+      "title": "Description",
+      "text": "Project description."
+    }
+  ],
+  "publications": [
+    {
+      "title": "Authors. Title. Venue Year.",
+      "url": "https://example.com/paper.pdf"
+    }
+  ]
+}
