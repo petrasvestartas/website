@@ -45,9 +45,6 @@
                 <a :href="repo.url" target="_blank" rel="noopener noreferrer" class="repo">
                   <span class="repo-name">{{ repo.name }}</span>
                   <span class="repo-description">{{ repo.description }}</span>
-                  <span class="repo-meta">
-                    <span v-if="repo.commits" class="commits">{{ repo.commits }} commits</span>
-                  </span>
                 </a>
               </li>
             </ul>
@@ -123,7 +120,6 @@ p {
 
 .description,
 .repo-description,
-.commits,
 .stars {
   font-size: 0.8em;
   color: grey;
@@ -220,7 +216,7 @@ p {
 
 .repo {
   display: grid;
-  grid-template-columns: minmax(180px, 280px) 1fr auto;
+  grid-template-columns: minmax(180px, 280px) 1fr;
   gap: 15px;
   align-items: baseline;
   padding: 8px 10px;
@@ -238,11 +234,6 @@ p {
   word-break: break-word;
 }
 
-.repo-meta {
-  display: flex;
-  gap: 15px;
-  white-space: nowrap;
-}
 
 /* Rhino plugins */
 .plugin-grid {
@@ -302,10 +293,6 @@ p {
     gap: 4px;
   }
 
-  .repo-meta {
-    white-space: normal;
-    flex-wrap: wrap;
-  }
 
   .plugin-grid {
     grid-template-columns: repeat(2, 1fr);
