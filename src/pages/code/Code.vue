@@ -189,8 +189,6 @@ p {
 .featured {
   display: flex;
   flex-direction: column;
-  border-top: 2px solid #000000;
-  padding-top: 15px;
 }
 
 .featured-image {
@@ -288,6 +286,7 @@ p {
   padding: 10px;
   color: #000000;
   text-decoration: none;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .plugin img {
@@ -298,8 +297,8 @@ p {
 }
 
 .plugin:hover {
-  background-color: #000000;
-  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {
