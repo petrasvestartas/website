@@ -14,6 +14,18 @@ export const profile = {
 // Own projects, shown as large cards.
 export const featured = [
   {
+    title: 'session',
+    subtitle: 'Geometry kernel',
+    description: 'One geometry kernel written in C++, Python and Rust with the same API, the same protobuf schemas and the same tests in every language. Meshes, NURBS, BReps and a WebGPU viewer.',
+    languages: ['C++', 'Python', 'Rust'],
+    stars: 3,
+    imageUrl: IMAGES + 'session.png',
+    links: [
+      { label: 'GitHub', url: 'https://github.com/petrasvestartas/session' },
+      { label: 'Documentation', url: 'https://petrasvestartas.github.io/session/' },
+    ],
+  },
+  {
     title: 'wood',
     subtitle: 'Timber joinery stack',
     description: 'Finds where timber plates touch, chooses which joints fit there and cuts them into both plates. A C++ core with nanobind bindings and a COMPAS wrapper, used for joinery research and fabrication.',
@@ -39,18 +51,6 @@ export const featured = [
       { label: 'Documentation', url: 'https://petrasvestartas.github.io/OpenNest/' },
       { label: 'food4rhino', url: 'https://www.food4rhino.com/en/app/opennest' },
       { label: 'compas_nest', url: 'https://github.com/petrasvestartas/compas_nest' },
-    ],
-  },
-  {
-    title: 'session',
-    subtitle: 'Geometry kernel',
-    description: 'One geometry kernel written in C++, Python and Rust with the same API, the same protobuf schemas and the same tests in every language. Meshes, NURBS, BReps and a WebGPU viewer.',
-    languages: ['C++', 'Python', 'Rust'],
-    stars: 3,
-    imageUrl: IMAGES + 'session.png',
-    links: [
-      { label: 'GitHub', url: 'https://github.com/petrasvestartas/session' },
-      { label: 'Documentation', url: 'https://petrasvestartas.github.io/session/' },
     ],
   },
   {
