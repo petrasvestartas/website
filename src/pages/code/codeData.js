@@ -22,7 +22,8 @@ export const featured = [
     imageUrl: IMAGES + 'session.png',
     links: [
       { label: 'GitHub', url: 'https://github.com/petrasvestartas/session' },
-      { label: 'Documentation', url: 'https://petrasvestartas.github.io/session/' },
+      { label: 'Viewer', url: 'https://petrasvestartas.github.io/session/' },
+      { label: 'Documentation', url: 'https://petrasvestartas.github.io/session/docs/' },
     ],
   },
   {
