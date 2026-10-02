@@ -76,29 +76,13 @@
             </a>
           </div>
         </section>
-
-        <section class="collection">
-          <h2>Libraries</h2>
-          <ul class="repo-list">
-            <li v-for="repo in libraries" :key="repo.name">
-              <a :href="repo.url" target="_blank" rel="noopener noreferrer" class="repo">
-                <span class="repo-name">{{ repo.name }}</span>
-                <span class="repo-description">{{ repo.description }}</span>
-                <span class="repo-meta">
-                  <span class="repo-languages">{{ repo.languages.join(' · ') }}</span>
-                  <span class="stars">★ {{ repo.stars }}</span>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </section>
       </div>
     </base-card>
   </div>
 </template>
 
 <script>
-import { profile, featured, contributions, plugins, libraries } from './codeData.js';
+import { profile, featured, contributions, plugins } from './codeData.js';
 
 export default {
   name: 'Code',
@@ -107,8 +91,7 @@ export default {
       profile,
       featured,
       contributions,
-      plugins,
-      libraries
+      plugins
     };
   }
 };
@@ -238,7 +221,7 @@ p {
   gap: 10px;
 }
 
-/* Contributions and libraries */
+/* Contributions */
 .organisation {
   margin-bottom: 25px;
 }

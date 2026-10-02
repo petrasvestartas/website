@@ -92,8 +92,8 @@ export const contributions = [
       { name: 'compas-RV', url: 'https://github.com/BlockResearchGroup/compas-RV', description: 'RhinoVAULT: form finding with reciprocal diagrams.', languages: ['Python'], stars: 16, commits: 108 },
       { name: 'compas_lmgc90', url: 'https://github.com/BlockResearchGroup/compas_lmgc90', description: 'LMGC90 contact solver wrapper.', languages: ['C++', 'Python'], stars: 2, commits: 66 },
       { name: 'compas_cra', url: 'https://github.com/BlockResearchGroup/compas_cra', description: 'Coupled rigid-block analysis.', languages: ['Python'], stars: 22, commits: 49 },
-      { name: 'compas_cnc', url: 'https://github.com/BRG-research/compas_cnc', description: 'Subtractive fabrication operations.', languages: ['Python'], stars: 3, commits: 28 },
-      { name: 'compas_3dec', url: 'https://github.com/BlockResearchGroup/compas_3dec', description: 'Discrete element modelling with Itasca 3DEC.', languages: ['Python'], stars: 3, commits: 10 },
+      { name: 'compas_manifold', url: 'https://github.com/petrasvestartas/compas_manifold', description: 'Guaranteed-manifold mesh booleans with Manifold.', languages: ['C++', 'Python'], stars: 0, commits: null },
+      { name: 'compas_nest', url: 'https://github.com/petrasvestartas/compas_nest', description: 'Python bindings for the OpenNest engines.', languages: ['C++', 'Python'], stars: 0, commits: null },
     ],
   },
   {
@@ -115,13 +115,6 @@ export const plugins = [
   { title: 'Raccoon', description: 'G-code for 5-axis CNC.', languages: ['C#'], imageUrl: IMAGES + 'raccoon.png', url: 'https://github.com/petrasvestartas/Raccoon' },
   { title: 'Mesh Curvature', description: 'Triangle mesh curvature analysis.', languages: ['C#'], imageUrl: IMAGES + 'mesh_curvature.png', url: 'https://www.food4rhino.com/en/app/mesh-curvature' },
   { title: 'Scatter', description: 'Instancing for large numbers of elements.', languages: ['C#'], imageUrl: IMAGES + 'scatter.png', url: 'https://www.food4rhino.com/en/app/scatter' },
+  { title: 'Boundary First Flattening', description: 'Conformal mesh flattening with Boundary First Flattening.', languages: ['C#'], imageUrl: IMAGES + 'boundary_first_flattening.png', url: 'https://github.com/petrasvestartas/boundary_first_flattening_rhino' },
 ];
 
-// Smaller libraries, shown as a compact list.
-export const libraries = [
-  { name: 'boundary_first_flattening_rhino', url: 'https://github.com/petrasvestartas/boundary_first_flattening_rhino', description: 'Boundary First Flattening for Rhino and Grasshopper.', languages: ['C#'], stars: 11 },
-  { name: 'compas_nest', url: 'https://github.com/petrasvestartas/compas_nest', description: 'Python bindings for the OpenNest engines.', languages: ['C++', 'Python'], stars: 0 },
-  { name: 'nest', url: 'https://github.com/petrasvestartas/nest', description: 'C++ 2D irregular nesting engines.', languages: ['C++'], stars: 2 },
-  { name: 'compas_manifold', url: 'https://github.com/petrasvestartas/compas_manifold', description: 'Guaranteed-manifold mesh booleans with Manifold.', languages: ['C++', 'Python'], stars: 0 },
-  { name: 'wgpu_viewer', url: 'https://github.com/petrasvestartas/wgpu_viewer', description: 'Cross-platform WebGPU geometry viewer.', languages: ['Rust'], stars: 0 },
-];
